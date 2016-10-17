@@ -1,0 +1,36 @@
+<form class="new_inquiry" id="new_inquiry" action="/inquiries" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="w/VsVpxlzzH0MwkHJiE4YrCGZNT5Pszu7xvKBlcoYErXMnN5lOddfOYBUBi54wMs7n5lmudAKxrt1r/2VW2eEQ==" /><br>
+<fieldset>
+<h4>
+<input value="be_a_host" type="hidden" name="inquiry[request_type]" id="inquiry_request_type" />
+</h4>
+<div id='FormElementsContainer' class='HostBG'> <!--NEW CODE LINE -->
+<div class="FormElements"> <!--NEW CODE LINE -->
+<div class='form-group'>
+<label for="inquiry_first_name">First name</label>
+<input class="form-control" type="text" name="inquiry[first_name]" id="inquiry_first_name" />
+</div>
+<div class='form-group'>
+<label for="inquiry_last_name">Last name</label>
+<input class="form-control" type="text" name="inquiry[last_name]" id="inquiry_last_name" />
+</div>
+<div class='form-group'>
+<label for="inquiry_email">Email</label>
+<input class="form-control" type="text" name="inquiry[email]" id="inquiry_email" />
+</div>
+<div class='form-group'>
+<label for="inquiry_phone">Phone</label>
+<input class="form-control" type="text" name="inquiry[phone]" id="inquiry_phone" />
+</div>
+<div class='form-group'>
+<label for="inquiry_notes">Notes</label>
+<textarea class="form-control" name="inquiry[notes]" id="inquiry_notes">
+</textarea>
+</div>
+<div class='actions'>  <!--MOVED INTO FIELDSET -->
+<input type="submit" name="commit" value="Submit Request" class="button right" /> <!--MOVED INTO FIELDSET -->
+</div> <!--MOVED INTO FIELDSET -->
+</div> <!--NEW CODE LINE -->
+</div> <!--NEW CODE LINE -->
+</fieldset>
+</div>
+</form>

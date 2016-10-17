@@ -1,0 +1,38 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  inquiry:
+    form:
+      header:
+        private_event: "Request information for private events"
+        to_be_host: "Sign Up to be a Host"
+        generic: "What can we help you with?"
+      title:
+        private_event: "Private Events"
+        to_be_host: "Be A Host"
+        generic: "Contact Us"
+      body:
+        private_event: "Interesting in hosting a private event and having Vignetto help you out? Contact us with your details and we'll get in touch as soon as possible."
+        to_be_host: "We would love to talk to you about hosting your next event through a listing on Vignetto. Please enter your details and one of our staff will be in touch as soon as possible."
+        generic: "What can we help you with?"
+
+

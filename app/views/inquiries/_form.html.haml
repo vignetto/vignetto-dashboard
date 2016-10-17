@@ -1,0 +1,39 @@
+- email = user_signed_in? ? current_user.email : nil
+.div{class: "authform"}
+  - @inquiry ||= Inquiry.new
+  = form_for @inquiry do |f|
+    - if @inquiry.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@inquiry.errors.count, "error")
+          prohibited your request from being saved:
+        %ul
+          - @inquiry.errors.full_messages.each do |message|
+            %li= message
+    %br
+    %fieldset
+      %h4
+        = inquiry_form_header(request_type)
+        = f.hidden_field :request_type, value: request_type
+      .form-group
+        = f.label :first_name
+        = f.text_field :first_name, class: "form-control"
+      .form-group
+        = f.label :last_name
+        = f.text_field :last_name, class: "form-control"
+      .form-group
+        = f.label :email
+        = f.text_field :email, class: "form-control", value: email
+      .form-group
+        = f.label :phone
+        = f.text_field :phone, class: "form-control"
+      .form-group
+        = f.label :notes
+        = f.text_area :notes, class: "form-control"
+    .actions
+      = f.submit "Submit Request", :class => 'button right'
+
+
+
+
+

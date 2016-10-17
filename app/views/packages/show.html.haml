@@ -1,0 +1,41 @@
+.container
+  .row
+    .col-lg-12.text-center
+      %h3
+        = @event.title
+      %h5
+        = @event.short_description
+  .row
+    .col-lg-12
+      = image_tag @event.banner.url(:header)
+      .bar
+  .row
+    .col-lg-8.col-md-8.col-sm-12.event-main-left
+      - @event.event_items.order(:position).each_with_index do |event_item, index|
+        - if index == 0
+          .col-lg-9.col-md-8.col-sm-9
+            %h2.title
+              = event_item.name
+          .col-lg-3.col-md-4.col-sm-12.col-xs-12.share-this
+            = render partial: 'layouts/event_share'
+        - else
+          .col-lg-8.col-md-8.col-sm-8
+            %h2.title
+              = event_item.name
+        .col-lg-12.col-md-12.col-sm-12
+          %p
+            - if event_item.upload?
+              = image_tag event_item.upload.url(:preview), class: "copyImage"
+            = event_item.description
+    .col-lg-4.col-md-4.col-sm-12.event-main-right
+      - if @event.waitlist_only?
+        = render partial: 'layouts/event_waitlist', locals: {event: @event}
+      - else
+        .col-lg-4.col-md-5.col-sm-6.col-xs-6
+          = render partial: 'layouts/event_cal', locals: {event: @event}
+          - if @event.has_itinerary_items?
+            %br
+            = render 'itinerary_pod'
+          %br
+          - if @event.has_map?
+            = render partial: 'layouts/map', locals: {event: @event}

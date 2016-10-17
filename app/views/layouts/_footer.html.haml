@@ -1,0 +1,18 @@
+%footer.footer
+  .container
+    .row
+      %div{class: "col-lg-6"}
+        .footerCopy
+          &#169; Vignetto, 2015
+          = link_to image_tag('facebookfooter.png'), "https://www.facebook.com/vignetto", target: :blank
+          = link_to image_tag('instagramfooter.png'), "https://instagram.com/livevignetto/", target: :blank 
+          = link_to image_tag('twitterfooter.png'), "https://twitter.com/livevignetto", target: :blank
+      %div{class: "col-lg-6"}
+        = link_to "Contact Us", contact_us_path
+        = link_to "Be a Host", be_a_host_path
+        = link_to "How It Works", how_it_works_path
+        = link_to "Custom Events", in_the_news_path
+        - if user_signed_in? && current_user.admin?
+          = link_to 'Admin', admin_root_path
+        - else
+          = link_to "Sign Up", new_user_registration_path

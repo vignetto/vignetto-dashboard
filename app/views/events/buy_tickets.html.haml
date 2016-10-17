@@ -1,0 +1,73 @@
+- if policy(@event).buy_tickets?
+  = javascript_include_tag "https://js.stripe.com/v2/"
+  :javascript
+    setTimeout(function(){
+      Stripe.setPublishableKey("#{Rails.application.secrets.stripe_publishable_key}");
+    }, 1000);
+  - event_date = @event.event_dates.find(params[:event_date])
+  - event_date_id = event_date.id
+  .div{class: "authform"}
+    = form_for [@event, @payment], html: {id: "new_payment_#{event_date_id}"} do |f|
+      #flash-messages
+      - if @payment.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@payment.errors.count, "error")
+            prohibited this payment from being saved:
+          %ul
+            - @payment.errors.full_messages.each do |message|
+              %li= message
+      %br
+      %fieldset
+        .h2 
+          = @event.title
+        .div 
+          = "Event: #{event_date.get_event_duration_format} @ $#{@event.ticket_price} per ticket"
+        .h3(id="new-payment-total" data-pmt-total="#{@event.ticket_price}") 
+          = "Total: #{@event.get_ticket_price_to_currency}"
+        %br
+        .form-group
+          = f.label :tickets 
+          = f.select :tickets, (1..event_date.get_tickets_left).to_a.map{|n| [n,n]}, class: "form-control"
+      %br
+      %fieldset
+        %h4 
+          = "Card Information"
+        .form-group
+          = f.label :full_name 
+          = f.text_field :full_name, class: "form-control", data: {stripe: "name"}, minlength: 1, maxlength: 30, required: true, value: current_user.name
+      %fieldset  
+        .form-group
+          = label_tag :card_number 
+          = text_field_tag :card_number, nil, name: nil, class: "form-control", minlength: 12, maxlength: 19, required: true, data: {stripe: "number"}
+        .form-inline
+          = label_tag :card_verification 
+          = text_field_tag :card_verification, nil, name: nil, class: "form-control", maxlength: 5, required: true, data: {stripe: "cvv"}
+        %br
+        .form-inline
+          = label_tag :card_expires
+          = select_tag :exp_month, options_for_select(Date::MONTHNAMES.compact.each_with_index.map { |name,i| ["#{i+1} - #{name}", i+1] }), class: "form-control", data: {stripe: "exp-month"}
+          = select_tag :exp_year, options_for_select((Date.today.year..(Date.today.year+10)).to_a), include_blank: false, class: "form-control", data: {stripe: "exp-year"}
+      %br
+      %fieldset
+        %h4 
+          = "Billing Information"        
+        .form-group
+          = f.hidden_field :event_id, value: @event.id
+          = f.hidden_field :user_id, value: current_user.id
+          = f.hidden_field :event_date_id, value: event_date_id
+          = f.hidden_field :stripe_email, value: current_user.email
+        .form-group
+          = f.label :address 
+          = f.text_field :address, class: "form-control", required: true, data: {stripe: "address_line1"}, value: current_user.address
+        .form-group
+          = f.label :city 
+          = f.text_field :city, class: "form-control", required: true, data: {stripe: "address_city"}, value: current_user.city  
+        .form-group
+          = f.label :state 
+          = f.text_field :state, class: "form-control", required: true, data: {stripe: "address_state"}, value: current_user.state  
+        .form-group
+          = f.label :zipcode 
+          = f.text_field :zipcode, class: "form-control", required: true, data: {stripe: "address_zip"}, value: current_user.zipcode  
+      .actions
+        = f.submit 'Buy Tickets', :class => 'button right'

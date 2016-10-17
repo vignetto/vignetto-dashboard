@@ -1,0 +1,385 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+// Put SCSS variables here
+
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "vignetto";
+
+// Put overrides for css rules down here
+
+ body {
+      padding-top: 110px;
+      /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  }
+
+img.logo {
+  width: 240px;
+}
+
+div .pkg-header-img-overlay {
+  background: rgba(0,0,0,0.3);
+  opacity: 1;
+  color: #fff;
+  z-index: 100;
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  width: 1040px;
+  height: 200px;
+  font-size: 18pt;
+  padding-left: 24px;
+  padding-top: 18px;
+}
+
+div .evt-header-img-overlay {
+  background: rgba(0,0,0,0.3);
+  opacity: 1;
+  color: #fff;
+  z-index: 100;
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  width: 1040px;
+  height: 200px;
+  font-size: 18pt;
+  padding-left: 24px;
+  padding-top: 18px;
+  text-align: right;
+}
+
+div.pkg-header-img-overlay button {
+  color: #fff;
+  background-color: rgb(254, 79, 85);
+  border-color: rgb(190, 8, 14);
+  border-width: 2px;
+  border-style: solid;
+  position: absolute;
+  right: 70px;
+  bottom: 30px;
+  width: 200px;
+}
+
+div.evt-header-img-overlay button {
+  color: #fff;
+  background-color: rgb(254, 79, 85);
+  border-color: rgb(190, 8, 14);
+  border-width: 2px;
+  border-style: solid;
+  position: absolute;
+  left: 260px;
+  bottom: 30px;
+  width: 200px;
+}
+
+
+.pkg-browse-img {
+  padding-top: 20px;
+  cursor: pointer;
+
+}
+
+/*div.p.a.span.pkg_browse_tip { */
+.pkg-browse-tip{
+  background: rgba(0,0,0,0.5);
+  background: #ffffff;
+  opacity: 0;
+  color: #000000;
+  border-color: #7E7783;
+  border-width: 2px;
+  border-style:solid;
+  cursor: pointer;
+  display: table;
+  height: 148px;
+  position: absolute;
+  bottom: 10px;
+  width: 521px;
+  left: 15px;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.sm-pkg-browse-tip {
+    background: #FFF none repeat scroll 0% 0%;
+    opacity: 0;
+    color: #000;
+    cursor: pointer;
+    display: table;
+    height: 125px;
+    max-height: 125px;
+    position: absolute;
+    bottom: 10px;
+    width: 360px;
+    left: 15px;
+    transition: opacity 700ms ease 50ms;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 2px 2px 5px 0px #CCCCCC;
+    border: 1px solid #CCCCCC;
+}
+
+div.sm-pkg-browse-tip a{
+  text-decoration: none;
+  color: #000000;
+}
+
+
+div.sm-pkg-browse-tip hr {
+   border-color: #7E7783;
+   width: 200px;
+   border-width: 2px;
+}
+
+div.sm-pkg-browse-tip a .tile-circle-img {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+}
+
+div.sm-pkg-browse-tip .tile-title {
+  width: 270px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-family: HelveticaNeue-Light;
+  font-size: 12pt;
+}
+
+div.sm-pkg-browse-tip .tile-desc {
+  width: 270px;
+  position: absolute;
+  right: 10px;
+  font-family: Helvetica;
+  text-align: left;
+  right: 4px;
+  top: 28px;
+}
+
+div.sm-pkg-browse-tip br {
+  size: 4px;
+
+}
+
+div.sm-pkg-browse-tip .tile-signup {
+  position: absolute;
+  right: 110px;
+  bottom: 6px;
+}
+
+div.sm-pkg-browse-tip button {
+  color: #fff;
+  background-color: rgb(254, 79, 85);
+  border-color: rgb(190, 8, 14);
+  border-width: 2px;
+  border-style: solid;
+}
+
+/*
+Below supplied CSS
+*/
+/*
+body > .container{
+  margin-bottom:60px;
+    padding-top: 110px;
+}
+*/
+.bar{
+  background-color:#fe4f55;
+  min-height:10px;
+  border-bottom:2px solid #be080e;
+}
+#signup{
+  margin-top:25px;
+  float: right;
+}
+.btn-signup{
+  background-color: #fe4f55;
+  float: right;
+  color:#fff;
+}
+.copyImage{
+  margin-right:20px;
+  float: left;
+}
+p{
+  text-align: justify;
+}
+
+.title{
+  color:#be080e;
+}
+.footer {
+  padding:20px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #fe4f55;
+  color:#fff;
+}
+
+.footer a{
+  color:#fff;
+  padding-left:25px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  border-right:1px solid #ccc;
+}
+.navbar-default .navbar-nav > li:last-of-type > a {
+  border-right:none;
+}
+
+.socialbar
+{
+  float: right;
+}
+
+.socialbar > img{
+  float:right;
+  padding-left: 5px;
+  transition: all .3s ease-out
+}
+
+.socialbar > img:hover{
+  opacity:.5;
+  transition: all .3s ease-out;
+}
+.socialbar > img:focus{
+  outline:none;
+}
+
+.overviewContainer{
+  border:1px solid #000;
+}
+
+.overviewDescription{
+  padding:10px;
+}
+.overviewItinerarySplit{
+  padding:5px;
+  background-color: #ccc;
+  margin: 5px 0;
+  text-align: center;
+}
+.packages{
+  padding-top:15px;
+  padding-bottom:15px;
+}
+#EventPod{
+  border:1px solid #000;
+  background-color:#fff;
+}
+#EventPod .podTitle{
+  padding: 10px 0;
+  font-size: 1.5em;
+  text-align:center;
+}
+#EventPod .monthBar{
+  background-color:#c3c3c3;
+  font-size:1.5em;
+  text-align: center;
+}
+#EventPod .monthWrapper{
+  padding:10px;
+}
+
+#EventPod .calendarWrapper{
+  text-align: center;
+}
+#EventPod .calendar{
+  border:1px solid #000;
+}
+#EventPod .calendarMonth {
+  background-color: #E3473F;
+  color:#fff;
+  font-size:.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding:5px 0;
+}
+#EventPod .calendarDate{
+  font-weight: bold;
+  font-size:2em;
+}
+#EventPod .calendarDay{
+  padding:5px 0;
+}
+#EventPod input[type=button]{
+  background-color:#E3473F;
+  font-size:.8em;
+  text-align:center;
+  color:#fff;
+  border:none;
+  padding:5px 10px;
+}
+#EventPod .event{
+  text-align:center;
+  margin-top:30px;
+  font-size:1.2em;
+}
+#EventPod .tickets{
+  margin-top:30px;
+  text-align:center;
+}
+#EventPod .ColumnHeader{
+  text-align: center;
+  padding:10px 10px 0 10px;
+  color:#be080e;
+  font-weight:bold;
+}
+
+a.btn-tickets-module, .btn-tickets-module{
+  background-color: #E3473F;
+  font-size: .8em;
+  text-align: center;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+a.btn-tickets-module:hover, input.btn-tickets-module:hover {
+  color: #333333;
+}
+.share-this{
+  margin-top: 20px;
+  float: left;
+  span {float: right;}
+}
+.event-main-left {
+  padding-right: 0px;
+  padding-left: 0px;  
+}
+.event-main-right {
+  padding: 0px 0px;  
+  margin-top: 60px; 
+}
+.social-icons {
+  margin-top: 10px;
+  img{
+    height: 45px;
+    width: 45px;
+  }
+}

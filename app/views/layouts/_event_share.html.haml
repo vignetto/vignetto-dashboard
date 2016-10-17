@@ -1,0 +1,17 @@
+- content_for :head do
+  = javascript_include_tag "https://ws.sharethis.com/button/buttons.js"
+  :javascript
+    var switchTo5x=true;
+    stLight.options({
+      publisher: "#{Rails.application.secrets.sharethis_pub_api_key}", 
+      doNotHash: true, 
+      doNotCopy: false, 
+      hashAddressBar: false,
+      onhover: false
+    });
+- st_title = "Vignetto.com Events, #{@event.title}"
+- st_summary = @event.short_description
+- st_url =  url_for only_path: false
+%span.st_email_large{displaytext: "Email", st_title: st_title, st_summary: st_summary, st_url: st_url}
+%span.st_twitter_large{displaytext: "Tweet", st_title: st_title, st_summary: st_summary, st_url: st_url}
+%span.st_facebook_large{displaytext: "Facebook", st_title: st_title, st_summary: st_summary, st_url: st_url}

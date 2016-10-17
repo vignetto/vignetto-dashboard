@@ -1,0 +1,17 @@
+- if user_signed_in?
+  .row
+    %br
+    .col-md-12
+      %h3 Your Account
+      .list-group
+        .list-group-item 
+          .list-group-item-heading
+            %h4
+              = current_user.email
+          .list-group-item-text
+            - unless current_user.name.nil? || current_user.name.blank?
+              = current_user.name   
+        %h4
+          = link_to 'Edit Account', edit_user_registration_path
+
+  = render partial: "payments/user_payments" 

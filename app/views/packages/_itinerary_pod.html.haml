@@ -1,0 +1,16 @@
+-#.row
+-#  .col-lg-4
+.overviewContainer
+  .overviewDescription
+    %span{class:"overviewHeader"}
+      %strong
+        Overview:
+      #{@event.short_description}
+  .overviewItinerarySplit
+    Daily Itinerary
+  .itineraryContainer
+    - @event.get_itinerary_list.compact.each do |ei|
+      .itineraryItem
+        = ei
+
+          

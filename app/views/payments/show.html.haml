@@ -1,0 +1,101 @@
+- if policy(@payment).show?
+  .container
+    .row
+      .col-xs-12
+        .text-center
+          %i.fa.fa-search-plus.pull-left.icon
+          %h3 
+            = "Thank you for your purchase of #{@payment.description}"
+          %h4 
+            = "Confirmation ##{@payment.stripe_charge_id}"
+        %hr/
+        .row
+          .col-xs-12.col-md-3.col-lg-3.pull-left
+            .panel.panel-default.height
+              .panel-heading Billing Details
+              .panel-body
+                %strong 
+                  = "#{@payment.full_name}"
+                %br/
+                = "#{@payment.address}"
+                %br/
+                = "#{@payment.city}"
+                %br/
+                = "#{@payment.state}"
+                %br/
+                %strong 
+                  = "#{@payment.zipcode}"
+                %br/
+          .col-xs-12.col-md-3.col-lg-3
+            .panel.panel-default.height
+              .panel-heading Payment Information
+              .panel-body
+                %strong Card Name:
+                = "#{@payment.card_brand}"
+                %br/
+                %strong Card Number:
+                = "***** #{@payment.card_four}"
+                %br/
+                %strong Exp Date:
+                = "#{@payment.card_exp}"
+                %br/
+          .col-xs-12.col-md-3.col-lg-3
+            .panel.panel-default.height
+              .panel-heading Shipping Address
+              .panel-body
+                %strong 
+                  = "#{@payment.full_name}"
+                %br/
+                = "#{@payment.address}"
+                %br/
+                = "#{@payment.city}"
+                %br/
+                = "#{@payment.state}"
+                %br/
+                %strong 
+                  = "#{@payment.zipcode}"
+                %br/
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            %h3.text-center
+              %strong Order summary
+          .panel-body
+            .table-responsive
+              %table.table.table-condensed
+                %thead
+                  %tr
+                    %td
+                      %strong Event
+                    %td.text-center
+                      %strong Ticket Price
+                    %td.text-center
+                      %strong Tickets
+                    %td.text-right
+                      %strong Total
+                %tbody
+                  %tr
+                    %td 
+                      = "#{@payment.description}"
+                    %td.text-center
+                      = "#{@payment.event.get_ticket_price_to_currency}"
+                    %td.text-center 
+                      = "#{@payment.tickets}"
+                    %td.text-right 
+                      = "#{@payment.get_amount_to_currency}"
+                  %tr
+                    %td.highrow
+                    %td.highrow
+                    %td.highrow.text-center
+                      %strong Subtotal
+                    %td.highrow.text-right 
+                      = "#{@payment.get_amount_to_currency}"
+                  %tr
+                    %td.emptyrow
+                      %i.fa.fa-barcode.iconbig
+                    %td.emptyrow
+                    %td.emptyrow.text-center
+                      %strong Total
+                    %td.emptyrow.text-right 
+                      = "#{@payment.get_amount_to_currency}"

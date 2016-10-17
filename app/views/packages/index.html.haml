@@ -1,0 +1,22 @@
+- content_for :title, "Explore Packages"
+
+.row
+  %div{class:"col-lg-12"}
+    %div{:class => "pkg-header-img-overlay"}
+      SHARE UNIQUE EXPERIENCES WITH OTHER WINE ENTHUSIASTS!
+      %br
+      Reserve 2 or 4 seats on a limo bus
+      %br
+      All inclusive day trips from SF to the wine country
+      %br
+      Spend the day on a guided tour
+      %br
+      Find the perfect package for you and your friends today!
+      = link_to "Sign up for our newsletter", contact_us_path, class: "btn btn-calltoaction"
+    = image_tag "browse_evts_hdr.png"
+    .bar
+
+.row
+  - @events.each_with_index do |event, index|
+    = render partial: 'package_tile', locals: {index: index, event: event}
+

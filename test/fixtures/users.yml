@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+admin_user:
+  first_name:   Admin
+  last_name:    One
+  email:        admin@vignetto.com
+  confirmed_at: <%= Time.now %>
+  encrypted_password: <%= Devise.bcrypt(User, 'testing') %>
+  role:         <%= User::roles[:admin] %>
+  address:      123 Vignetto St. 
+  city:         Calistoga
+  state:        CA
+  zipcode:      94515
+  phone:        916-123-1234
+
+admin_2_user:
+  first_name:   Admin2
+  last_name:    Two
+  email:        admin2@vignetto.com
+  confirmed_at: <%= Time.now %>
+  encrypted_password: <%= Devise.bcrypt(User, 'testing') %>
+  role:         <%= User::roles[:admin] %>
+  address:      123 Vignetto St. 
+  city:         Calistoga
+  state:        CA
+  zipcode:      94515
+  phone:        916-123-1234
+
+host_user:
+  first_name:   Host
+  last_name:    Last
+  email:        host1@vignetto.com
+  confirmed_at: <%= Time.now %>
+  encrypted_password: <%= Devise.bcrypt(User, 'testing') %>
+  role:         <%= User::roles[:host] %>
+  address:      123 Vignetto St. 
+  city:         Calistoga
+  state:        CA
+  zipcode:      94515
+  phone:        916-456-7894
+
+participant_user:
+  first_name:   Participant
+  last_name:    Last
+  email:        part1@vignetto.com
+  confirmed_at: <%= Time.now %>
+  encrypted_password: <%= Devise.bcrypt(User, 'testing') %>
+  role:         <%= User::roles[:participant] %>
+  address:      123 Vignetto St. 
+  city:         Calistoga
+  state:        CA
+  zipcode:      94515
+  phone:        916-456-7894

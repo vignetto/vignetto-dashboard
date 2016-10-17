@@ -1,0 +1,290 @@
+body > .container{
+	margin-bottom:60px;
+    /*padding-top: 110px;  Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+.bar{
+	background-color:#fe4f55;
+	min-height:10px;
+	border-bottom:2px solid #be080e;
+}
+#signup{
+	margin-top:25px;
+	float:right;
+}
+.btn-signup{
+	background-color: #fe4f55;
+	float: right;
+	color:#fff;
+}
+.btn-calltoaction{
+	background-color: #fe4f55;
+	float: right;
+	color:#fff;
+
+}
+.btn-subcontent{
+	background-color: #fe4f55;
+	float: right;
+	color:#fff;
+	margin-top:-40px;
+}
+.copyImage{
+	margin-right:20px;
+	float:left;
+}
+p{
+	text-align: justify;
+}
+
+.title{
+	color:#be080e;
+}
+.mailtitle{
+	color:#be080e;
+	text-align: center;
+	margin-top:20px;
+}
+.footer {
+	padding:20px;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #fe4f55;
+	color:#fff;
+}
+
+.footer a{
+	color:#fff;
+	padding-left:25px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	border-right:1px solid #ccc;
+}
+.navbar-default .navbar-nav > li:last-of-type > a {
+	border-right:none;
+}
+
+.socialbar
+{
+	float:right;
+}
+
+.socialbar > img{
+	float:right;
+	padding-left: 5px;
+	transition: all .3s ease-out
+}
+
+.socialbar > img:hover{
+	opacity:.5;
+	transition: all .3s ease-out;
+}
+.socialbar > img:focus{
+	outline:none;
+}
+
+.overviewContainer{
+	border:1px solid #000;
+    position: relative;
+    bottom:40px;
+    width:370px;
+}
+
+.overviewDescription{
+	padding:10px;
+}
+.overviewItinerarySplit{
+	padding:5px;
+	background-color: #ccc;
+	margin: 5px 0;
+	text-align: center;
+}
+.overviewItem{
+    height: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+	
+}
+.overviewTime{
+	float:left;
+}
+.overviewEvent{
+	float:right;
+}
+.packages{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+#EventPod{
+	border:1px solid #000;
+	background-color:#fff;
+    width: 370px;
+    position: relative;
+    bottom: 40px;
+}
+#EventPod .podTitle{
+	padding: 10px 0;
+	font-size: 1.5em;
+	text-align:center;
+}
+#EventPod .monthBar{
+	background-color:#c3c3c3;	
+	font-size:1.5em;
+	text-align: center;
+}
+#EventPod .monthWrapper{
+	padding:10px;
+}
+
+#EventPod .calendarWrapper{
+	text-align: center;
+}
+#EventPod .calendar{
+	border:1px solid #000;
+}
+#EventPod .calendarMonth {
+	background-color: #E3473F;
+	color:#fff;
+	font-size:.6em;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding:5px 0;
+}
+#EventPod .calendarDate{
+	font-weight: bold;
+	font-size:2em;
+}
+#EventPod .calendarDay{
+	padding:5px 0;
+}
+#EventPod input[type=button]{
+	background-color:#E3473F;
+	font-size:.8em;
+	text-align:center;
+	color:#fff;
+	border:none;
+	padding:5px 10px;
+}
+#EventPod .event{
+	text-align:center;
+	margin-top:30px;
+	font-size:1.2em;
+}
+#EventPod .tickets{
+	margin-top:30px;
+	text-align:center;
+}
+#EventPod .ColumnHeader{
+	text-align: center;
+	padding:10px 10px 0 10px;
+	color:#be080e;
+	font-weight:bold;
+}
+
+.overViewHeader {
+    position: absolute;
+    margin-left: 4px;
+}
+
+.itineraryContainer {
+    width: 100%;
+    margin: 10px;
+}
+
+.itineraryItem {
+	margin-top: 5px;
+}
+#MapCanvas {
+  border: 1px solid #000;
+  background-color: #fff;
+  height: 370px;
+  width: 370px;
+  position: relative;
+  bottom: 40px;
+}
+
+.MainPageHeader
+{
+	background: url(/images/frontimage.png) no-repeat ;
+	height:400px;
+	padding:30px 0 0 30px;
+}
+.MainPageCallToAction{
+	padding:20px;
+	background: rgba(0,0,0,.4);
+	font-size:1em;
+	color:#fff;
+	width:950px;
+}
+.mainpage-subcontent-row{
+	margin-top:30px;
+}
+.mainpage-subcontent
+{
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	height:215px;
+}
+#mailsignup{
+	/*display:none;*/
+	margin:auto auto;
+	width:440px;
+	height:150px;
+	border:3px solid #fe4f55;
+	-webkit-box-shadow: -2px 6px 33px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 6px 33px -4px rgba(0,0,0,0.75);
+	box-shadow: -2px 6px 33px -4px rgba(0,0,0,0.75);
+	border-radius: 10px;
+}
+.mail{
+	margin:40px;
+}
+#FormElementsContainer{
+    padding:20px;
+    width:1140px;
+    height:470px;
+}
+.FormElements{
+    float:right;
+}
+.EventsBG{
+    background: url(/images/contactus_img.jpg); /* replace with whatever image you want to use for the events background 1140x470*/
+}
+.HostBG{
+    background: url(/images/host_img.jpg); /* replace with whatever image you want to use for the Host background 1140x470*/
+}
+
+.CorpBG{
+    background: url(/images/corporate_img.jpg); /* replace with whatever image you want to use for the Host background 1140x470*/
+}
+.btn-sign-in {
+	color: rgb(51, 51, 51);
+	background-color: rgb(236, 236, 236);
+	border: 1px solid rgb(192, 192, 192);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 3px 6px 2px;
+	display: inline;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+div.sm-pkg-browse-tip {
+    background: #FFF none repeat scroll 0% 0%;
+    opacity: 0;
+    color: #000;
+    cursor: pointer;
+    display: table;
+    height: 125px;
+    max-height: 125px;
+    position: absolute;
+    bottom: 10px;
+    width: 360px;
+    left: 15px;
+    transition: opacity 700ms ease 50ms;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 2px 2px 5px 0px #CCCCCC;
+    border: 1px solid #CCCCCC;
+}

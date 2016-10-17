@@ -1,0 +1,21 @@
+- content_for :title, "Explore Events"
+
+.row
+  %div{class:"col-lg-12"}
+    %div{:class => "evt-header-img-overlay"}
+      FIND THE PERFECT UNIQUE EXPERIENCES FOR YOU.
+      %br
+      %br
+      Candleliight dinners in a cave
+      %br
+      Local Chef preparing lunch in a vineyard
+      %br
+      Explore below and sign up for your wine experience today
+      %br
+      = link_to "Sign up for our newsletter", contact_us_path, class: "btn btn-calltoaction"
+    = image_tag "browse_evts_hdr.png"
+    .bar
+
+.row
+  - @events.each_with_index do |event, index|
+    = render partial: "event_tile", locals: {index: index, event: event}

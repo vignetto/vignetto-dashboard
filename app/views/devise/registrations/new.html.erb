@@ -1,0 +1,58 @@
+<div class="form-center">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+    <%= devise_error_messages! %>
+    <h3>Sign Up for Vignetto</h3>
+      <h4>Account Information (Required)</h4>
+      <div class="panel-body">
+        <div class="form-group">
+          <%= f.label :email%>
+          <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+    </div>
+      <h4>Personal Information (Optional)</h4>
+      <div class="panel-body">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <% unless @get_tickets_form %>
+          <div class="form-group">
+            <%= f.label :address %>
+            <%= f.text_field :address, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :city %>
+            <%= f.text_field :city, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :state %>
+            <%= f.text_field :state, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :zipcode %>
+            <%= f.text_field :zipcode, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :phone %>
+            <%= f.telephone_field :phone, class: 'form-control' %>
+          </div>
+        <% end %>
+      </div>
+    <%= f.submit 'Sign up for Vignetto', class: 'button' %>
+  <% end %>
+  <br>
+  <% if @get_tickets_form %>
+    <div>
+      <div class="pull-left"><h4>Already have a Vignetto account?</h4></div>
+      <div><%= link_to 'Sign In', new_user_session_path, class: 'btn-sign-in pull-left' %></div>
+    </div>
+  <%end%>
+</div>

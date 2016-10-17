@@ -1,0 +1,55 @@
+.row
+  .col-lg-12
+    .MainPageHeader
+      .MainPageCallToAction
+        %div
+          <h3>Lunch in the Vineyard • Candlelit Dinners in a Cellar • All-Day Private Wine Tours</h3>
+          %br 
+          <h2>A new and easy way to experience wine country</h2>
+          %br
+          %br
+          <h3>What is Vignetto?</h3>
+          <h4><ul>
+          <li>Provides a platform to quickly and easily find unique wine experiences</li>
+          <li>Combines wine with local chefs for catered lunches in a vineyard and winemaker dinners in cave</li>
+          <li>Currently in the Healdburg area, but coming to Sonoma and Napa soon</li>
+          <li>Italian for Vineyard</li>
+          </ul></h4>
+          = link_to "Newsletter Signup", contact_us_path, class: "btn btn-calltoaction"
+          %br
+    .bar
+.row.mainpage-subcontent-row
+  .col-lg-4
+    = image_tag "frontdescriptionimages.jpg", height: '215', width: '375'
+  .col-lg-8
+    .mainpage-subcontent
+      %div
+        %h2.title.pull-left Join our Crowdfunding Campaign 
+        .social-icons.pull-right
+          = link_to image_tag('facebook.png'), "https://www.facebook.com/vignetto", target: :blank
+          = link_to image_tag('instagram.png'), "https://instagram.com/livevignetto/", target: :blank 
+          = link_to image_tag('twitter.png'), "https://twitter.com/livevignetto", target: :blank
+      %br
+      %br
+      %p.pull-left
+        <strong>Vignetto is Partnering with TravelStarter! </strong>We are excited to announce that Vignetto is launching a crowdfunding campaign with TravelStarter. Vignetto’s new online marketplace provides easy access to intimate and authentic local wine country experiences not available anywhere else, and now we need your help with our crowdfunding campaign. We have six funding levels from $5 to $200 that includes Signature Vignetto wine glasses, Vignetto wine gear (t-shirt, wine glasses and corkscrews), catered lunch in the vineyard, winemaker dinners, or an all-day Vignetto Adventure that will include three private tastings, transportation and catered lunch. 
+        %br
+        <strong>Together we’re building the Vignetto community, and it starts with you. </strong>
+
+    = link_to "Start now", "https://travelstarter.com/projects/vignetto/556", class: "btn btn-subcontent"
+.row.mainpage-subcontent-row
+  .col-lg-8
+    .mainpage-subcontent
+      %h2.title EXPLORE EVENTS
+      Vignetto Events are intimate, one-of-a-kind occasions not available to the public. These are magical wine country moments that you can’t wait to share and will never forget. Join our local community where you’ll discover experiences from a candlelit dinner in a wine cellar (with one of our favorite winemakers) to a private tasting and vineyard picnic (where you pick the ingredients from the chef’s garden) to a hands-on experiential cooking course and tasting (with the Michelin star chef who lives next door). 
+    = link_to "Explore Events Now", explore_path, class: "btn btn-subcontent"
+  .col-lg-4
+    = image_tag "pod_two_img.jpg", height: '215', width: '375'
+    .row.mainpage-subcontent-row
+  .col-lg-4
+    = image_tag "pod_three_img.jpg", height: '215', width: '375'
+  .col-lg-8
+    .mainpage-subcontent
+      %h2.title FIND PACKAGES
+      Vignetto Adventures are all-day or multi-day journeys with exclusive access to visit our favorite wineries, winemakers and chefs. Explore the hidden gems, backroads, and lesser-know vineyards and cellars as well as the best known. Choose from adventures like a handpicked tasting tour (from the winemaker’s private cellars) to specially created wine and food pairings (with seasonal produce you choose at the Farmer’s Market) to a Wine Country 101 journey with our friend (and world-renowned sommelier) to find your own wine style.
+    = link_to "Check out Packages", packages_path, class: "btn btn-subcontent"

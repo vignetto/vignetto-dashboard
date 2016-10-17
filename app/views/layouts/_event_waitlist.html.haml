@@ -1,0 +1,31 @@
+- event_date = @event.event_dates.first
+.col-lg-4.col-md-5.col-sm-6.col-xs-6
+  %div#EventPod
+    .podTitle 
+      = "Event Dates"
+    .monthBar
+      = "Coming Soon"
+    .row
+      .col-lg-3.col-md-3.col-sm-3.col-xs-3.ColumnHeader
+        Dates
+      .col-lg-5.col-md-5.col-sm-5.col-xs-5.ColumnHeader
+        Event
+      .col-lg-4.col-md-4.col-sm-4.col-xs-4.ColumnHeader
+        Tickets
+    .row.monthWrapper
+      .col-lg-3.col-md-3.col-sm-3.col-xs-3.calendarWrapper
+        .calendarDay
+          = "waitlist..."
+        .calendar
+          .calendarMonth
+            = "?"
+          .calendarDate
+            = "?"
+      .col-lg-5.col-md-5.col-sm-5.col-xs-5.event
+        = event_date_price_and_length(event_date)
+      .col-lg-4.col-md-4.col-sm-4.col-xs-4.tickets
+        = form_tag("/waitlists/get_on_waitlist", method: "post") do 
+          = hidden_field_tag :user_id, current_user.try(:id)
+          = hidden_field_tag :event_date_id, event_date.try(:id)
+          = hidden_field_tag :event_id, event.try(:id)
+          = submit_tag("WAITLIST", class: "btn-tickets-module")

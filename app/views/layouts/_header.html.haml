@@ -1,0 +1,38 @@
+%nav{class: "navbar navbar-default navbar-fixed-top", role:"navigation"}
+  .bar
+  .container
+    .row
+      %div{class: "col-lg-12"}
+        %div{class: "navbar-header"}
+          %button{type: "button", class:"navbar-toggle", data:{toggle:"collapse",target:"#bs-example-navbar-collapse-1"}}
+            %span{class:"sr-only"}
+              Toggle navigation
+            %span{class:"icon-bar"}
+            %span{class:"icon-bar"}
+            %span{class:"icon-bar"}
+
+          %a{class:"navbar-brand", href:root_path}
+            %img{src:image_path('logo.png'), class:"logo" }
+        %div{class:"collapse navbar-collapse", id:"bs-example-navbar-collapse-1"}
+          %ul{class:"nav navbar-nav"}
+            %li
+              = link_to "Events", explore_path
+            %li
+              = link_to "Packages", packages_path
+            %li
+              = link_to "How It Works", how_it_works_path
+            %li
+              = link_to "Custom Events", private_events_path
+            %li
+              = link_to "About Us", about_us_path
+            %li
+              - if user_signed_in?
+                = link_to 'Account', account_path
+              - else
+                = link_to "Sign In", new_user_session_path
+          - if user_signed_in?
+            #signup{style:"float:right;"}
+              = link_to 'Sign out', destroy_user_session_path, :method=>'delete', :class=>"btn btn-signup", :role=>"button"
+          - else
+            #signup{style:"float:right;"}
+              = link_to 'Sign Up', new_user_registration_path, :class=>"btn btn-signup", :role=>"button"

@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? "Vignetto - #{yield(:title)}" : 'Vignetto'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Vignetto'}"}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true'
+    = yield :head
+
+    = render 'layouts/ie_compat'
+  %body
+    = render 'layouts/header'
+    = render 'layouts/messages'
+    .container
+      = yield
+    = render 'layouts/footer'
+    = yield :bottom
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+

@@ -1,0 +1,38 @@
+%br
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          %h3.text-center
+            %strong Your Orders
+        - if current_user.payments.any?
+          .table-responsive
+            %table.table.table-condensed.table-striped
+              %thead
+                %tr
+                  %td
+                    %strong Event
+                  %td.text-center
+                    %strong Ticket Price
+                  %td.text-center
+                    %strong Tickets
+                  %td.text-center
+                    %strong Total
+                  %td.text-right
+              %tbody
+                - policy_scope(current_user.payments).each do |payment| 
+                  - event = payment.event
+                  %tr
+                    %td 
+                      - path = event.package ? package_path(event) : event_path(event)
+                      = link_to "#{payment.description}", path
+                    %td.text-center
+                      = "#{payment.event.get_ticket_price_to_currency}"
+                    %td.text-center 
+                      = "#{payment.tickets}"
+                    %td.text-center 
+                      = "#{payment.get_amount_to_currency}"
+                    %td.text-right 
+                      = link_to "Details", payment_path(payment)
+        - else
+          .panel-body You have 0 orders

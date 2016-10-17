@@ -1,0 +1,16 @@
+%div{class:"col-lg-4"}
+  %p
+    %a
+      = image_tag event.preview.url(:tile), :class => "pkg-browse-img", :onClick => "showEvent('" + event.id.to_s + "')", :onMouseout => "hidePkgTip('tip_" + index.to_s + "')", :onMouseover => "showPkgTip('tip_" + index.to_s + "')"
+      %div{:class => "sm-pkg-browse-tip", :id => "tip_" + index.to_s, :onClick => "showEvent('" + event.id.to_s + "')", :onMouseout => "hidePkgTip('tip_" + index.to_s + "')", :onMouseover => "showPkgTip('tip_" + index.to_s + "')"}
+        = image_tag event.avatar.url(:badge), :class => "tile-circle-img"
+        %div{:class => "tile-title"}
+          = event.title
+        %br
+        %div{:class => "tile-desc"}
+          = event.short_description
+          %br
+          %hr{:class => "tile-hr"}
+        %div{:class => "tile-signup"}
+          %button{:class => "tile-signup-btn"}
+            Sign Up

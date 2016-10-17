@@ -1,0 +1,45 @@
+-#%div.col-lg-4.col-md-5.col-sm-6.col-xs-6
+%div#EventPod
+  - if @event_months.blank?
+    %div.podTitle
+      No Dates Scheduled Yet
+  - else
+    %div.podTitle
+      Event Dates
+    - last_month = nil
+    - @event_months.sort.each do |month, event_dates|
+      - if last_month != month
+        - last_month = month
+        %div.monthBar
+          = event_dates.first.time_begin.strftime("%B")
+        %div.row
+          %div.col-lg-3.col-md-3.col-sm-3.col-xs-3.ColumnHeader
+            Dates
+          %div.col-lg-5.col-md-5.col-sm-5.col-xs-5.ColumnHeader
+            Event
+          %div.col-lg-4.col-md-4.col-sm-4.col-xs-4.ColumnHeader
+            Tickets
+        - event_dates.each do |event_date|
+          %div.row.monthWrapper
+            %div.col-lg-3.col-md-3.col-sm-3.col-xs-3.calendarWrapper
+              %div.calendarDay
+                = event_date.time_begin.strftime("%A")
+              %div.calendar
+                %div.calendarMonth
+                  = event_date.time_begin.strftime("%B")
+                %div.calendarDate
+                  = event_date.time_begin.strftime("%d")
+            %div.col-lg-5.col-md-5.col-sm-5.col-xs-5.event
+              = event_date_price_and_length(event_date)
+            %div.col-lg-4.col-md-4.col-sm-4.col-xs-4.tickets
+              - if event_date.tickets_sold_out?
+                %p{class: "btn-tickets-module"}
+                  = "SOLD OUT"
+              - elsif event_date.waitlist
+                = form_tag("/waitlists/get_on_waitlist", method: "post") do
+                  = hidden_field_tag :user_id, current_user.try(:id)
+                  = hidden_field_tag :event_date_id, event_date.try(:id)
+                  = hidden_field_tag :event_id, event.try(:id)
+                  = submit_tag("WAITLIST", class: "btn-tickets-module")
+              - else
+                = link_to("GET TICKETS", buy_tickets_event_path(event_date: event_date), class: "btn-tickets-module")
